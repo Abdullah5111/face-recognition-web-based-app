@@ -20,8 +20,6 @@ def identify(unknown_image):
     unknown_image = face_recognition.load_image_file("D:/7th Semester/CV/Project/FRS/media/" + unknown_image)
     unknown_encoding = face_recognition.face_encodings(unknown_image)[0]
     results = face_recognition.compare_faces(known_faces, unknown_encoding)
-    print(results)
-    print(known_names)
     for i, result in enumerate(results):
         if result:
             return (f"Face recognized as {known_names[i]}")
